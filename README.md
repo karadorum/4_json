@@ -4,14 +4,22 @@ The script takes the path to a file with arbitrary data in JSON format and displ
 
 # Quickstart
 
-[TODO]
+The script requires Python v3.5. A path of file containing JSON data is the positional argument of the script.
 
 Example of script launch on Linux, Python 3.5:
 
 ```bash
 
-$ python pprint_json.py <path to file>
-# TODO add output example
+$ python pprint_json.py test.json
+[
+    {
+        1: 2,
+        3: 4
+    },
+    {
+        5:6
+    }
+]
 
 ```
 
