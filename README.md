@@ -10,7 +10,7 @@ Example of script launch on Linux, Python 3.5:
 
 ```bash
 
-$ python pprint_json.py test.json
+$ python 4_json.py test.json
 [
     {
         1: 2,
