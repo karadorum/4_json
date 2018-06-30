@@ -8,8 +8,8 @@ def load_data(filepath):
         return parsed_data
 
 
-def pretty_print_json(data):
-    prettyfied_text = json.dumps(data, indent=4, sort_keys=True)
+def pretty_print_json(json_text):
+    prettyfied_text = json.dumps(json_text, indent=4, sort_keys=True)
     print(prettyfied_text)
 
 
