@@ -8,23 +8,23 @@ def load_data(filepath):
         return parsed_data
 
 
-def pretty_print_json(json_text):
-    prettyfied_text = json.dumps(json_text, indent=4, sort_keys=True)
-    print(prettyfied_text)
+def pretty_print_json(json_data):
+    prettyfied_json = json.dumps(json_data, indent=4, sort_keys=True)
+    print(prettyfied_json)
 
 
-def get_arg():
+def get_arg(arg):
     try:
-        arg_data = load_data(sys.argv[1])
+        arg_data = load_data(arg)
     except json.JSONDecodeError:
-        print('file must be json')
+        exit('file must be json')
     except FileNotFoundError:
-        print('file not found')
+        exit('file not found')
     except IndexError:
-        print('name of file argument is empty')
+        exit('name of file argument is empty')
     return arg_data
 
 
 if __name__ == '__main__':
 
-    pretty_print_json(get_arg())
+    pretty_print_json(get_arg(sys.argv[1]))
