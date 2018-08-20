@@ -13,18 +13,14 @@ def pretty_print_json(json_data):
     print(prettyfied_json)
 
 
-def get_arg(arg):
-    try:
-        arg_data = load_data(arg)
-    except json.JSONDecodeError:
-        exit('file must be json')
-    except FileNotFoundError:
-        exit('file not found')
-    except IndexError:
-        exit('name of file argument is empty')
-    return arg_data
-
-
 if __name__ == '__main__':
+    try:
+        json_data = load_data(sys.argv[1])
+    except json.JSONDecodeError:
+        print('file must be json')
+    except FileNotFoundError:
+        print('file not found')
+    except IndexError:
+        print('name of file argument is empty')
 
-    pretty_print_json(get_arg(sys.argv[1]))
+    pretty_print_json(json_data)
